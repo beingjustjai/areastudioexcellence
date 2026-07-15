@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competition Operations Discovery Portal™ | AREA Studio Excellence</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="questionnaire.css">
+</head>
+<body>
+<form name="competition-discovery" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="submitted-at" />
+  <input type="text" name="bot-field" />
+  <input type="text" name="studioName" />
+  <input type="text" name="owner" />
+  <input type="text" name="competitionDirector" />
+  <input type="text" name="yearsInBusiness" />
+  <input type="text" name="competitionDancers" />
+  <input type="text" name="competitionTeams" />
+  <input type="text" name="faculty" />
+  <input type="text" name="locations" />
+  <input type="text" name="programExists" />
+  <input type="text" name="successMeans" />
+  <input type="text" name="threeYearVision" />
+  <input type="text" name="auditionsTiming" />
+  <input type="text" name="choreographyComplete" />
+  <input type="text" name="costumesOrdered" />
+  <input type="text" name="seasonMapProcess" />
+  <input type="text" name="feeCollection" />
+  <input type="text" name="financialChallenges" />
+  <input type="text" name="modelConfidence" />
+  <input type="text" name="requiredTechnique" />
+  <input type="text" name="rehearsalStructure" />
+  <input type="text" name="programmingRefinements" />
+  <input type="text" name="howSelected" />
+  <input type="text" name="howManyCompetitions" />
+  <input type="text" name="howManyConventions" />
+  <input type="text" name="whoOwnsWhat" />
+  <input type="text" name="documentedSystems" />
+  <input type="text" name="communicationRating" />
+  <input type="text" name="parentFrustrations" />
+  <input type="text" name="whatBreaksFirst" />
+  <input type="text" name="biggestOpportunity" />
+  <input type="text" name="promptedContact" />
+  <input type="text" name="oneTransformation" />
+  <input type="text" name="oneYearSuccess" />
+</form>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand">
+    <span class="brand-badge"><img src="images/brand/logo_area_only.png" alt="AREA"></span>
+    <span class="brand-sub">STUDIO EXCELLENCE™</span>
+  </a>
+  <div class="links">
+    <a href="index.html#prep">The PREP™ System</a>
+    <a href="index.html#standards">Eight Standards</a>
+    <a href="index.html#pathways">Partnership Pathways</a>
+    <a href="discovery-profile.html" class="cta-btn">General Discovery Profile</a>
+  </div>
+</nav>
+
+<header class="df-hero">
+  <span class="eyebrow">Confidential · Executive Readiness Assessment</span>
+  <h1>Competition Operations Discovery Portal™</h1>
+  <p>This assessment prepares your Executive Discovery Session by helping AREA understand your competition program's operations, leadership, financial structure, programming, and long-term vision.</p>
+  <div class="df-journey-mini">
+    <span class="active">Discovery Profile</span>
+    <span class="sep">→</span>
+    <span>AREA Executive Review</span>
+    <span class="sep">→</span>
+    <span>Executive Discovery Session</span>
+    <span class="sep">→</span>
+    <span>Recommended Engagement Pathway</span>
+  </div>
+</header>
+
+<div id="df-form" class="df-wrap"></div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">AREA <small>STUDIO EXCELLENCE™</small></div>
+      <p style="margin-top:1rem; max-width:260px; color:rgba(247,244,238,0.5); font-size:0.82rem;">Guiding Studios. Developing Dancers. Building Legacies.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Visit</h5>
+      <p>2870 Peachtree Rd. #995<br>Atlanta, GA 30305</p>
+      <a href="mailto:jmj@myAREAatlanta.com">jmj@myAREAatlanta.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AREA Studio Excellence™. Confidential.</span>
+  </div>
+</footer>
+
+<script src="questionnaire.js"></script>
+<script>
+const sections = [
+  {
+    title: "Studio Snapshot",
+    fields: [
+      { id: "studioName", label: "Studio Name" },
+      { id: "owner", label: "Owner" },
+      { id: "competitionDirector", label: "Competition Director" },
+      { id: "yearsInBusiness", label: "Years in Business" },
+      { id: "competitionDancers", label: "Competition Dancers" },
+      { id: "competitionTeams", label: "Competition Teams" },
+      { id: "faculty", label: "Faculty" },
+      { id: "locations", label: "Locations" },
+    ]
+  },
+  {
+    title: "Vision & Leadership",
+    fields: [
+      { id: "programExists", label: "Our competition program exists to…", type: "textarea" },
+      { id: "successMeans", label: "Success for our competition team means…", type: "textarea" },
+      { id: "threeYearVision", label: "Where do you want the program in three years?", type: "textarea" },
+    ]
+  },
+  {
+    title: "Season Mapping",
+    fields: [
+      { id: "auditionsTiming", label: "When do auditions occur?" },
+      { id: "choreographyComplete", label: "When is choreography complete?" },
+      { id: "costumesOrdered", label: "When are costumes ordered?" },
+      { id: "seasonMapProcess", label: "How do you map the season?", type: "textarea" },
+    ]
+  },
+  {
+    title: "Financial Structure",
+    fields: [
+      { id: "feeCollection", label: "How are competition fees collected?", type: "textarea" },
+      { id: "financialChallenges", label: "Biggest financial challenges?", type: "textarea" },
+      { id: "modelConfidence", label: "Confidence in current model (1–10)?", type: "scale" },
+    ]
+  },
+  {
+    title: "Programming & Training",
+    fields: [
+      { id: "requiredTechnique", label: "Required technique classes", type: "textarea" },
+      { id: "rehearsalStructure", label: "Rehearsal structure", type: "textarea" },
+      { id: "programmingRefinements", label: "Programming refinements desired", type: "textarea" },
+    ]
+  },
+  {
+    title: "Competition Strategy",
+    fields: [
+      { id: "howSelected", label: "How are competitions selected?", type: "textarea" },
+      { id: "howManyCompetitions", label: "How many competitions?" },
+      { id: "howManyConventions", label: "How many conventions?" },
+    ]
+  },
+  {
+    title: "Operations",
+    fields: [
+      { id: "whoOwnsWhat", label: "Who owns scheduling, billing, registration, travel, music, costumes?", type: "textarea" },
+      { id: "documentedSystems", label: "What systems are documented?", type: "textarea" },
+    ]
+  },
+  {
+    title: "Parent Experience",
+    fields: [
+      { id: "communicationRating", label: "Rate communication (1–10)", type: "scale" },
+      { id: "parentFrustrations", label: "Biggest parent frustrations", type: "textarea" },
+    ]
+  },
+  {
+    title: "Growth Readiness",
+    fields: [
+      { id: "whatBreaksFirst", label: "If your team doubled tomorrow, what breaks first?", type: "textarea" },
+      { id: "biggestOpportunity", label: "Biggest growth opportunity", type: "textarea" },
+    ]
+  },
+  {
+    title: "Executive Reflection",
+    subtitle: "These final questions help shape your Executive Discovery Session.",
+    fields: [
+      { id: "promptedContact", label: "What prompted you to contact AREA?", type: "textarea" },
+      { id: "oneTransformation", label: "If AREA could transform one thing, what would it be?", type: "textarea" },
+      { id: "oneYearSuccess", label: "What does success look like one year from now?", type: "textarea" },
+    ]
+  }
+];
+
+const form = new DiscoveryForm({
+  formEl: document.getElementById('df-form'),
+  sections,
+  storageKeyPrefix: 'competition-discovery',
+  formLabel: 'Competition Operations Discovery Portal'
+});
+</script>
+
+</body>
+</html>
