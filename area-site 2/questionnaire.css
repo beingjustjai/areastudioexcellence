@@ -1,0 +1,112 @@
+/* ============================================
+   Discovery Questionnaire — shared styling
+   ============================================ */
+
+.df-hero {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 9rem 4vw 4rem;
+  text-align: center;
+}
+.df-hero .eyebrow { display:block; margin-bottom: 1rem; }
+.df-hero h1 { font-size: clamp(2.1rem, 4vw, 3.2rem); color: var(--ivory); }
+.df-hero p { max-width: 620px; margin: 1.2rem auto 0; color: rgba(247,244,238,0.75); }
+
+.df-journey-mini {
+  display: flex; justify-content: center; gap: 1.4rem; margin-top: 2.4rem; flex-wrap: wrap;
+}
+.df-journey-mini span {
+  font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(247,244,238,0.55);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.df-journey-mini span.active { color: var(--gold-bright); }
+.df-journey-mini .sep { color: rgba(201,162,76,0.4); }
+
+.df-wrap {
+  max-width: 780px;
+  margin: -2.5rem auto 6rem;
+  background: var(--ivory-soft);
+  border: 1px solid rgba(201,162,76,0.3);
+  border-radius: 4px;
+  padding: 3rem 3rem 2.6rem;
+  box-shadow: 0 30px 70px -30px rgba(13,24,61,0.35);
+  position: relative;
+  z-index: 5;
+}
+@media (max-width: 640px) {
+  .df-wrap { padding: 2rem 1.4rem; margin: -1.5rem 1rem 4rem; }
+}
+
+.df-progress-track {
+  height: 3px; background: rgba(201,162,76,0.2); border-radius: 2px; overflow: hidden; margin-bottom: 1.8rem;
+}
+.df-progress-fill { height: 100%; background: var(--gold); transition: width 0.4s ease; }
+
+.df-steps-row {
+  display: flex; align-items: center; margin-bottom: 1.6rem; overflow-x: auto; padding-bottom: 0.4rem;
+}
+.df-step-dot {
+  width: 22px; height: 22px; min-width: 22px; border-radius: 50%;
+  border: 1.5px solid rgba(201,162,76,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; color: var(--stone);
+}
+.df-step-dot.active { border-color: var(--gold); background: var(--navy); color: var(--gold-bright); }
+.df-step-dot.done { border-color: var(--gold); background: var(--gold); color: var(--navy); }
+.df-step-line { height: 1px; width: 14px; min-width: 14px; background: rgba(201,162,76,0.3); }
+
+.df-section-label {
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orchid); margin-bottom: 0.5rem;
+}
+.df-section-title { font-size: 1.8rem; color: var(--navy); margin-bottom: 0.4rem; }
+.df-section-sub { color: var(--stone); font-size: 0.95rem; margin-bottom: 1.8rem; margin-top: 0; }
+
+.df-fields { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.df-field label { display: block; font-size: 0.92rem; color: var(--navy); margin-bottom: 0.55rem; font-weight: 500; }
+.df-optional { color: var(--stone); font-weight: 300; font-size: 0.82rem; }
+
+.df-input {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(110,110,110,0.3);
+  border-radius: 2px;
+  background: #fff;
+  color: var(--navy);
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+.df-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,162,76,0.15);
+}
+
+.df-scale { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.df-scale-btn {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(110,110,110,0.3);
+  background: #fff;
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.df-scale-btn:hover { border-color: var(--gold); }
+.df-scale-btn.active { background: var(--navy); border-color: var(--navy); color: var(--gold-bright); }
+
+.df-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 2.6rem; padding-top: 1.8rem; border-top: 1px solid rgba(201,162,76,0.25);
+}
+
+.df-confirm { text-align: center; padding: 2rem 0 1rem; }
+.df-confirm-star { margin-bottom: 1rem; display: flex; justify-content: center; }
+.df-confirm-star img { width: 2.4rem; height: 2.4rem; }
+.df-confirm h3 { font-size: 1.7rem; color: var(--navy); margin-bottom: 0.9rem; }
+.df-confirm p { color: var(--stone); max-width: 480px; margin: 0 auto 0.6rem; }
+.df-confirm-note { font-family: var(--serif); font-style: italic; color: var(--orchid); }
