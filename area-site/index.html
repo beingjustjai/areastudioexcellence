@@ -19,9 +19,9 @@
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 3vw;
+    gap: 5vw;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
@@ -88,7 +88,7 @@
     color: rgba(247,244,238,0.65);
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: 1100px) {
     .hero-grid { grid-template-columns: 1fr; padding-top: 7rem; }
     .hero-img-wrap img { height: 420px; }
   }
@@ -168,6 +168,30 @@
   @media (max-width: 860px) {
     .framework-block, .framework-block.reverse { grid-template-columns: 1fr; direction: ltr; }
   }
+
+  /* ---------------- PLATEAU SPLIT LAYOUT ---------------- */
+  .plateau-split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .plateau-callout {
+    background: var(--ivory-soft);
+    border: 1px solid rgba(201,162,76,0.35);
+    padding: 2.6rem 2.2rem;
+    text-align: center;
+  }
+  .plateau-callout .star { width: 3rem; height: 3rem; display: inline-block; margin-bottom: 1.2rem; }
+  .plateau-callout p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--navy);
+    line-height: 1.5;
+    margin: 0;
+  }
+  @media (max-width: 860px) { .plateau-split { grid-template-columns: 1fr; } }
 
   /* ---------------- CERTIFICATION LEVELS ---------------- */
   .cert-row {
@@ -321,6 +345,7 @@
   }
   .photo-band figure { margin: 0; position: relative; overflow: hidden; }
   .photo-band img { height: 260px; width: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .photo-band img.face-top { object-position: center 12%; }
   .photo-band figure:hover img { transform: scale(1.06); }
   .photo-band figcaption {
     position: absolute; bottom: 0; left: 0; right: 0;
@@ -367,6 +392,8 @@
     color: var(--gold);
     display: block;
   }
+  .stats-row .stat b.stat-text { font-size: 1.6rem; }
+  .stats-row .stat { max-width: 200px; }
   .stats-row .stat span { font-size: 0.8rem; color: var(--stone); letter-spacing: 0.03em; }
 
   /* ---------------- TESTIMONIALS ---------------- */
@@ -503,9 +530,15 @@
 
 <section class="section-pad">
   <div class="container">
-    <div class="section-head" style="margin-bottom:0;">
-      <h2>Passion built your studio. Systems will sustain it.</h2>
-      <p>Studio owners are passionate and talented — yet many find themselves working harder without seeing the growth, impact, or freedom they envisioned. Great studios plateau because they outgrow their systems.</p>
+    <div class="plateau-split">
+      <div class="section-head" style="margin-bottom:0;">
+        <h2>Passion built your studio. Systems will sustain it.</h2>
+        <p>Studio owners are passionate and talented — yet many find themselves working harder without seeing the growth, impact, or freedom they envisioned. Great studios plateau because they outgrow their systems.</p>
+      </div>
+      <div class="plateau-callout">
+        <span class="star"></span>
+        <p>"Excellence is not an accident. It is built — intentionally, consistently, and with systems that support success."</p>
+      </div>
     </div>
   </div>
 </section>
@@ -610,7 +643,7 @@
     <div class="photo-band">
       <figure><img src="images/dance_class.jpg" alt="Teaching artist leading a ballet technique class"><figcaption>Studio Assessments</figcaption></figure>
       <figure><img src="images/meeting_table.jpg" alt="Brandy Stephens and Jai McClendon Carpenter in an AREA executive consulting session"><figcaption>Curriculum &amp; Programming</figcaption></figure>
-      <figure><img src="images/portrait_seated.jpg" alt="Brandy Stephens, COO &amp; Strategic Operations Director"><figcaption>Enrollment &amp; Growth</figcaption></figure>
+      <figure><img class="face-top" src="images/portrait_seated.jpg" alt="Brandy Stephens, COO &amp; Strategic Operations Director"><figcaption>Enrollment &amp; Growth</figcaption></figure>
       <figure><img src="images/portrait_desk_orange.jpg" alt="Jai McClendon Carpenter, Founder &amp; Executive Artistic Director"><figcaption>Operational Excellence</figcaption></figure>
     </div>
   </div>
@@ -696,7 +729,7 @@
       <div class="stat"><b>12+</b><span>Studios Served to Date</span></div>
       <div class="stat"><b>95%</b><span>Client Satisfaction Rate</span></div>
       <div class="stat"><b>3–8x</b><span>Average Return on Investment</span></div>
-      <div class="stat"><b>100s</b><span>Of Dancers' Lives Transformed</span></div>
+      <div class="stat"><b class="stat-text">Tens of Thousands</b><span>Of Dancers' Lives Transformed</span></div>
     </div>
     <div style="text-align:center; margin-top:3.5rem;">
       <a href="discovery-profile.html" class="btn btn-gold">See What's Possible for Your Studio</a>
