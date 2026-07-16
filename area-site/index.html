@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AREA Studio Excellence™ | Executive Consulting for Dance Studios</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+
+  /* ---------------- HERO ---------------- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--navy);
+    color: var(--ivory);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5vw;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8rem 4vw 4rem;
+  }
+  .hero-copy .eyebrow { margin-bottom: 1.3rem; display: block; }
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    line-height: 1.08;
+    color: var(--ivory);
+  }
+  .hero-copy h1 em {
+    font-style: italic;
+    color: var(--orchid-bright);
+  }
+  .hero-copy .sub {
+    margin-top: 1.6rem;
+    font-size: 1.15rem;
+    color: rgba(247,244,238,0.8);
+    max-width: 480px;
+    font-weight: 300;
+  }
+  .hero-actions {
+    margin-top: 2.6rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .hero-img-wrap {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5);
+  }
+  .hero-img-wrap img { width: 100%; height: 680px; object-fit: contain; object-position: center top; background: var(--navy); }
+  .hero-tag {
+    position: absolute;
+    bottom: 1.4rem; left: 1.4rem;
+    background: rgba(13,24,61,0.85);
+    border: 1px solid var(--gold);
+    padding: 0.9rem 1.3rem;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    color: var(--gold-bright);
+    letter-spacing: 0.03em;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 2.4rem;
+    margin-top: 3.4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(201,162,76,0.25);
+  }
+  .hero-stats .stat b {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--gold-bright);
+    display: block;
+  }
+  .hero-stats .stat span {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(247,244,238,0.65);
+  }
+
+  @media (max-width: 1100px) {
+    .hero-grid { grid-template-columns: 1fr; padding-top: 7rem; }
+    .hero-img-wrap img { height: 420px; }
+  }
+
+  /* ---------------- PILLARS STRIP ---------------- */
+  .pillars-strip {
+    background: var(--orchid);
+    padding: 2.4rem 4vw;
+  }
+  .pillars-row {
+    max-width: 1400px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem 0;
+    text-align: center;
+    width: 100%;
+  }
+  .pillars-row span {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ivory);
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+  .pillars-row .sep {
+    color: rgba(247,244,238,0.5);
+    margin: 0 0.6rem;
+    font-style: normal;
+  }
+
+  /* ---------------- PREP FRAMEWORK ---------------- */
+  .prep-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.6rem;
+    margin-top: 2.5rem;
+  }
+  .prep-card {
+    text-align: center;
+    padding: 2.2rem 1.3rem;
+    border: 1px solid rgba(201,162,76,0.35);
+    background: var(--ivory-soft);
+  }
+  .prep-letter {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    color: var(--navy);
+    font-weight: 700;
+    display: block;
+  }
+  .prep-card h4 { font-size: 1.2rem; color: var(--orchid); margin: 0.4rem 0 0.9rem; }
+  .prep-card p { color: var(--stone); font-size: 0.92rem; margin: 0; }
+  @media (max-width: 780px) { .prep-grid { grid-template-columns: 1fr 1fr; } }
+
+  /* ---------------- STUDIO DNA / FLYWHEEL SHOWCASE ---------------- */
+  .brand-frameworks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 2.5rem;
+  }
+  .framework-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .framework-block.reverse { direction: rtl; }
+  .framework-block.reverse > * { direction: ltr; }
+  .framework-block img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px -25px rgba(13,24,61,0.3);
+  }
+  .framework-copy h3 { font-size: 1.8rem; color: var(--navy); margin-bottom: 0.8rem; }
+  .framework-copy p { color: var(--stone); font-size: 1rem; margin-bottom: 1rem; }
+  .framework-copy .tagline { font-family: var(--serif); font-style: italic; color: var(--orchid); font-size: 1.1rem; }
+  @media (max-width: 860px) {
+    .framework-block, .framework-block.reverse { grid-template-columns: 1fr; direction: ltr; }
+  }
+
+  /* ---------------- PLATEAU SPLIT LAYOUT ---------------- */
+  .plateau-split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .plateau-callout {
+    background: var(--ivory-soft);
+    border: 1px solid rgba(201,162,76,0.35);
+    padding: 2.6rem 2.2rem;
+    text-align: center;
+  }
+  .plateau-callout .star { width: 3rem; height: 3rem; display: inline-block; margin-bottom: 1.2rem; }
+  .plateau-callout p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--navy);
+    line-height: 1.5;
+    margin: 0;
+  }
+  @media (max-width: 860px) { .plateau-split { grid-template-columns: 1fr; } }
+
+  /* ---------------- CERTIFICATION LEVELS ---------------- */
+  .cert-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2.8rem;
+    flex-wrap: wrap;
+  }
+  .cert-level {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 1.6rem 1rem;
+    background: var(--ivory-soft);
+    border: 1px solid rgba(201,162,76,0.3);
+  }
+  .cert-level .badge {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 1.5px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.8rem;
+    font-family: var(--serif);
+    color: var(--gold-bright);
+    font-size: 1.1rem;
+  }
+  .cert-level h4 { font-size: 0.98rem; color: var(--orchid); margin-bottom: 0.4rem; }
+  .cert-level p { font-size: 0.82rem; color: var(--stone); margin: 0; }
+
+  /* ---------------- STANDARDS GRID ---------------- */
+  .standards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 2.5rem;
+    border-top: 1px solid rgba(247,244,238,0.15);
+  }
+  .standard-cell {
+    padding: 2.2rem 1.6rem;
+    border-right: 1px solid rgba(247,244,238,0.12);
+    border-bottom: 1px solid rgba(247,244,238,0.12);
+  }
+  .standard-cell .num {
+    font-family: var(--serif);
+    color: var(--gold);
+    font-size: 0.95rem;
+  }
+  .standard-cell h4 { color: var(--ivory); font-size: 1.15rem; margin: 0.5rem 0 0.5rem; }
+  .standard-cell p { color: rgba(247,244,238,0.65); font-size: 0.88rem; margin: 0; }
+  @media (max-width: 900px) { .standards-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .standards-grid { grid-template-columns: 1fr; } }
+
+  /* ---------------- JOURNEY / PROCESS ---------------- */
+  .journey-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2rem 1rem;
+  }
+  .journey-row::before {
+    content: "";
+    position: absolute;
+    top: 27px; left: 4%; right: 4%;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--gold), var(--gold) 6px, transparent 6px, transparent 12px);
+    z-index: 0;
+  }
+  .journey-step {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+  .journey-step .dot {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 1.5px solid var(--gold);
+    color: var(--gold-bright);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+    font-family: var(--serif);
+    font-size: 1.3rem;
+  }
+  .journey-step h4 { font-size: 1rem; color: var(--navy); margin-bottom: 0.4rem; }
+  .journey-step p { font-size: 0.85rem; color: var(--stone); margin: 0; }
+
+  /* ---------------- PATHWAYS ---------------- */
+  .pathways-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+    margin-top: 2.8rem;
+  }
+  .pathway-card {
+    background: var(--ivory-soft);
+    border: 1px solid rgba(201,162,76,0.3);
+    display: flex;
+    flex-direction: column;
+  }
+  .pathway-head {
+    background: var(--navy);
+    color: var(--ivory);
+    padding: 1.3rem 1.4rem;
+  }
+  .pathway-head.orchid-head { background: var(--orchid); }
+  .pathway-head.orchid-head .num { color: var(--ivory); opacity: 0.7; }
+  .pathway-head.orchid-head span { color: var(--ivory); opacity: 0.85; }
+  .pathway-head .num { color: var(--gold); font-family: var(--serif); font-size: 0.85rem;}
+  .pathway-head h4 { font-size: 1.3rem; margin: 0.3rem 0 0.2rem; font-family: var(--serif); }
+  .pathway-head span { font-size: 0.78rem; color: var(--gold-bright); }
+  .pathway-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+  .pathway-body ul { margin: 0 0 1.2rem; padding-left: 1.1rem; font-size: 0.85rem; color: var(--stone); flex: 1; }
+  .pathway-body li { margin-bottom: 0.4rem; }
+  .pathway-deliverable {
+    font-size: 0.78rem;
+    background: rgba(124,31,140,0.08);
+    color: var(--orchid);
+    padding: 0.7rem 0.9rem;
+    text-align: center;
+    font-style: italic;
+    font-family: var(--serif);
+  }
+  .pathway-cta {
+    display: block;
+    text-align: center;
+    padding: 0.8rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--navy);
+    background: var(--gold);
+    transition: background 0.2s;
+  }
+  .pathway-cta:hover { background: var(--gold-bright); }
+  @media (max-width: 980px) { .pathways-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .pathways-grid { grid-template-columns: 1fr; } }
+
+  /* ---------------- WHO WE SERVE / PHOTO GRID ---------------- */
+  .photo-band {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+    margin-top: 3rem;
+  }
+  .photo-band figure { margin: 0; position: relative; overflow: hidden; }
+  .photo-band img { height: 260px; width: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .photo-band img.face-top { object-position: center 12%; }
+  .photo-band figure:hover img { transform: scale(1.06); }
+  .photo-band figcaption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(13,24,61,0.88), transparent);
+    color: var(--ivory);
+    padding: 1.6rem 1rem 0.9rem;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+  }
+  @media (max-width: 860px) { .photo-band { grid-template-columns: 1fr 1fr; } }
+
+  /* ---------------- FOUNDER QUOTE ---------------- */
+  .founder-quote {
+    padding: 5rem 4vw;
+    background: var(--navy);
+    color: var(--ivory);
+    text-align: center;
+  }
+  .founder-quote .mark { color: var(--gold); font-family: var(--serif); font-size: 3rem; line-height: 1; }
+  .founder-quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+    max-width: 780px;
+    margin: 0.6rem auto 1.4rem;
+    color: var(--ivory);
+    line-height: 1.5;
+  }
+  .founder-quote .attribution { color: var(--gold-bright); font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .founder-quote .attribution span { display: block; color: rgba(247,244,238,0.6); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: none; margin-top: 0.2rem; }
+
+  /* ---------------- TESTIMONIAL / STATS ---------------- */
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+  .stats-row .stat b {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    color: var(--gold);
+    display: block;
+  }
+  .stats-row .stat b.stat-text { font-size: 1.6rem; }
+  .stats-row .stat { max-width: 200px; }
+  .stats-row .stat span { font-size: 0.8rem; color: var(--stone); letter-spacing: 0.03em; }
+
+  /* ---------------- TESTIMONIALS ---------------- */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    margin-top: 2.8rem;
+  }
+  .testimonial-card {
+    background: var(--ivory-soft);
+    border: 1px solid rgba(201,162,76,0.3);
+    padding: 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .testimonial-card .quote-mark {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.6rem;
+  }
+  .testimonial-card p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--navy);
+    flex: 1;
+    margin: 0 0 1.2rem;
+  }
+  .testimonial-card .attribution {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--orchid);
+    font-weight: 500;
+  }
+  @media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+  /* ---------------- CTA FINAL ---------------- */
+  .cta-final {
+    background: var(--navy);
+    color: var(--ivory);
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+  .cta-final-copy { padding: 6rem 4vw; }
+  .cta-final-copy .eyebrow { color: var(--gold); }
+  .cta-final-copy h2 { color: var(--ivory); font-size: clamp(2rem, 4vw, 3rem); margin-top: 0.8rem; }
+  .cta-final-copy p { color: rgba(247,244,238,0.75); margin-top: 1.2rem; max-width: 460px; }
+  .cta-final-img { height: 100%; min-height: 460px; overflow: hidden; }
+  .cta-final-img img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 20%; }
+  @media (max-width: 900px) {
+    .cta-final { grid-template-columns: 1fr; }
+    .cta-final-img { min-height: 320px; }
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  footer {
+    background: var(--navy-deep);
+    color: rgba(247,244,238,0.6);
+    padding: 3rem 4vw 2rem;
+    font-size: 0.85rem;
+  }
+  .footer-grid {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(247,244,238,0.1);
+  }
+  .footer-brand { font-family: var(--serif); color: var(--ivory); font-size: 1.3rem; }
+  .footer-brand small { display: block; color: var(--gold); font-size: 0.65rem; letter-spacing: 0.2em; margin-top: 0.3rem; }
+  .footer-col h5 { color: var(--ivory); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.9rem; font-weight: 500; }
+  .footer-col a, .footer-col p { display: block; color: rgba(247,244,238,0.6); font-size: 0.85rem; margin-bottom: 0.5rem; }
+  .footer-col a:hover { color: var(--gold-bright); }
+  .footer-bottom { max-width: 1240px; margin: 1.6rem auto 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand">
+    <span class="brand-badge"><img src="images/brand/logo_area_only.png" alt="AREA"></span>
+    <span class="brand-sub">STUDIO EXCELLENCE™</span>
+  </a>
+  <div class="links">
+    <a href="#prep">The PREP™ System</a>
+    <a href="#standards">Eight Standards</a>
+    <a href="#pathways">Partnership Pathways</a>
+    <a href="#contact">Contact</a>
+    <a href="discovery-profile.html" class="cta-btn">Start Your Discovery Profile</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy fade-in visible">
+      <span class="eyebrow">Executive Consulting for Dance Studios</span>
+      <h1>Building Exceptional Studios.<br>Developing Exceptional Dancers.<br><em>Creating Lasting Legacies.</em></h1>
+      <p class="sub">AREA Studio Excellence™ is the executive consulting division of AREA — helping studio owners build operationally excellent, artistically intentional organizations that outlast them.</p>
+      <div class="hero-actions">
+        <a href="discovery-profile.html" class="btn btn-gold">Begin Your Studio Discovery Profile</a>
+        <a href="#prep" class="btn btn-outline-light">Explore the PREP™ Framework</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>16+</b><span>Years in Dance Studio Leadership</span></div>
+        <div class="stat"><b>12+</b><span>Studios Served to Date</span></div>
+        <div class="stat"><b>95%</b><span>Client Satisfaction Rate</span></div>
+      </div>
+    </div>
+    <div class="hero-img-wrap fade-in visible">
+      <img src="images/hero_jai_brandy_kneecrop.jpg" alt="Brandy Stephens and Jai McClendon Carpenter, AREA Studio Excellence leadership">
+      <div class="hero-tag">Brandy Stephens &amp; Jai McClendon Carpenter — COO &amp; Founder</div>
+    </div>
+  </div>
+</header>
+
+<div class="pillars-strip">
+  <div class="pillars-row">
+    <span>Purpose</span><span class="sep">·</span><span>Leadership</span><span class="sep">·</span><span>Operational Excellence</span><span class="sep">·</span><span>Artistic Excellence</span><span class="sep">·</span><span>Sustainable Growth</span><span class="sep">·</span><span>Legacy</span>
+  </div>
+</div>
+
+<!-- WHY STUDIOS PLATEAU -->
+<section class="section-pad" style="padding-bottom:0;">
+  <div class="container">
+    <img src="images/slides/slide3.jpg" alt="Why Great Studios Plateau — common reasons studios plateau" style="width:100%; border-radius:4px; box-shadow:0 30px 60px -25px rgba(13,24,61,0.3);">
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="plateau-split">
+      <div class="section-head" style="margin-bottom:0;">
+        <h2>Passion built your studio. Systems will sustain it.</h2>
+        <p>Studio owners are passionate and talented — yet many find themselves working harder without seeing the growth, impact, or freedom they envisioned. Great studios plateau because they outgrow their systems.</p>
+      </div>
+      <div class="plateau-callout">
+        <span class="star"></span>
+        <p>"Excellence is not an accident. It is built — intentionally, consistently, and with systems that support success."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="compass-break"><span class="star"></span></div>
+
+<!-- PREP FRAMEWORK -->
+<section class="section-pad" id="prep" style="background:var(--orchid);">
+  <div class="container">
+    <img src="images/slides/slide4.jpg" alt="The PREP Framework — Purpose, Respect, Expression, Passion" style="width:100%; border-radius:4px; box-shadow:0 30px 60px -25px rgba(13,24,61,0.4);">
+  </div>
+</section>
+
+<!-- OWNER'S JOURNEY -->
+<section class="section-pad">
+  <div class="container">
+    <img src="images/slides/slide7.jpg" alt="The Owner's Journey — from the calling to the legacy" style="width:100%; border-radius:4px; box-shadow:0 30px 60px -25px rgba(13,24,61,0.3);">
+  </div>
+</section>
+
+<!-- EIGHT STANDARDS -->
+<section class="section-pad dark-section" id="standards">
+  <div class="container">
+    <img src="images/slides/slide10.jpg" alt="The Eight Standards — the foundation of excellence" style="width:100%; border-radius:4px; box-shadow:0 30px 60px -25px rgba(0,0,0,0.4);">
+  </div>
+</section>
+
+<!-- STUDIO PARTNERSHIP SOLUTIONS -->
+<section class="section-pad">
+  <div class="container">
+    <img src="images/slides/slide13.jpg" alt="Studio Partnership Solutions — one partner, multiple ways to grow" style="width:100%; border-radius:4px; box-shadow:0 30px 60px -25px rgba(13,24,61,0.3);">
+  </div>
+</section>
+
+<!-- STUDIO DNA + EXCELLENCE FLYWHEEL -->
+<section class="section-pad" style="background:var(--ivory-soft); border-top:1px solid rgba(201,162,76,0.25);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow on-light">Discover. Define. Deliver.</span>
+      <h2>Your Studio DNA™</h2>
+      <p>Your Studio DNA™ is the unique blueprint that defines who you are, what you stand for, and the experience you create. We help you uncover your authentic identity and align every decision with it.</p>
+    </div>
+    <div class="framework-block">
+      <img src="images/brand/studio_dna.png" alt="Studio DNA framework: Purpose, Values, Personality, Promise, Experience, Legacy">
+      <div class="framework-copy">
+        <h3>Purpose. Values. Personality. Promise. Experience. Legacy.</h3>
+        <p>Six elements define your Studio DNA™ — from why you exist, to what you believe, to what you leave behind. Strong DNA creates consistency, connection, and loyalty.</p>
+        <p class="tagline">Your DNA. Your Difference. Your Power.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:5rem;">
+      <div class="section-head">
+        <span class="eyebrow on-light">Momentum Creates Mastery</span>
+        <h2>The AREA Excellence Flywheel™</h2>
+        <p>Excellence isn't achieved once — it's built through continuous, intentional motion. Eight interconnected stages keep every part of your studio moving together, with the dancer at the center of every decision.</p>
+      </div>
+      <div class="framework-block reverse">
+        <img src="images/brand/excellence_flywheel.png" alt="AREA Excellence Flywheel: Vision, People, Curriculum, Experiences, Operations, Measurement, Refinement, Impact">
+        <div class="framework-copy">
+          <h3>Vision → People → Curriculum → Experiences → Operations → Measurement → Refinement → Impact</h3>
+          <p>Every decision begins and ends with the dancer. When every part of your studio moves together, momentum builds — and momentum creates mastery.</p>
+          <p class="tagline">"Excellence isn't powered by one extraordinary moment. It's sustained by intentional systems repeated over time."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="compass-break"><span class="star"></span></div>
+
+<!-- ASSESSMENT & DISCOVERY JOURNEY -->
+<section class="section-pad" id="discovery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow on-light">Clarity Today. Direction Tomorrow.</span>
+      <h2>Assessment &amp; Discovery</h2>
+      <p>Every transformation begins with understanding. Our Assessment &amp; Discovery process uncovers what's working, what's not, and the greatest opportunities for growth. We listen deeply. We ask the right questions. We see what others miss.</p>
+    </div>
+    <div class="journey-row">
+      <div class="journey-step"><div class="dot">1</div><h4>Initial Conversation</h4><p>A meaningful conversation to understand your vision, challenges, and goals.</p></div>
+      <div class="journey-step"><div class="dot">2</div><h4>Data Gathering</h4><p>We collect key data through surveys, interviews, and studio documentation.</p></div>
+      <div class="journey-step"><div class="dot">3</div><h4>Analysis &amp; Evaluation</h4><p>We analyze strengths, gaps, systems, and performance across all eight standards.</p></div>
+      <div class="journey-step"><div class="dot">4</div><h4>Insights Revealed</h4><p>We uncover opportunities and pinpoint priorities aligned with your studio DNA.</p></div>
+      <div class="journey-step"><div class="dot">5</div><h4>Opportunities Defined</h4><p>We clarify what's possible and align recommendations with your vision.</p></div>
+      <div class="journey-step"><div class="dot">6</div><h4>Path Forward</h4><p>We deliver a clear, strategic roadmap tailored to your studio's needs and goals.</p></div>
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="discovery-profile.html" class="btn btn-outline-navy">Begin the Studio Excellence Discovery Profile™</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="section-pad" style="background:var(--ivory-soft); border-top:1px solid rgba(201,162,76,0.25);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow on-light">The AREA Experience</span>
+      <h2>Expertise that Inspires. Partnership that Transforms.</h2>
+      <p>We combine deep industry expertise with a heart for the dance community. Our approach is hands-on, customized, and designed to create momentum that lasts — on stage, in your studio, and in your business.</p>
+    </div>
+    <div class="photo-band">
+      <figure><img src="images/dance_class.jpg" alt="Teaching artist leading a ballet technique class"><figcaption>Studio Assessments</figcaption></figure>
+      <figure><img src="images/meeting_table.jpg" alt="Brandy Stephens and Jai McClendon Carpenter in an AREA executive consulting session"><figcaption>Curriculum &amp; Programming</figcaption></figure>
+      <figure><img class="face-top" src="images/portrait_seated.jpg" alt="Brandy Stephens, COO &amp; Strategic Operations Director"><figcaption>Enrollment &amp; Growth</figcaption></figure>
+      <figure><img src="images/portrait_desk_orange.jpg" alt="Jai McClendon Carpenter, Founder &amp; Executive Artistic Director"><figcaption>Operational Excellence</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER QUOTE -->
+<section class="founder-quote">
+  <div class="mark">"</div>
+  <p>I built AREA on the belief that studio owners deserve a partner who sees the heart behind the hustle — and helps build a business that lasts as long as the legacy you're creating.</p>
+  <div class="attribution">Jai McClendon Carpenter<span>Founder &amp; Executive Artistic Director</span></div>
+</section>
+
+<!-- PARTNERSHIP PATHWAYS -->
+<section class="section-pad" id="pathways">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow on-light">Every Studio Begins in a Different Place</span>
+      <h2>Choose Your Partnership</h2>
+      <p>Every studio has a unique vision and starting point. We meet you where you are — and guide you where you're meant to go. Every partnership begins with the Studio Readiness Profile.</p>
+    </div>
+    <div class="pathways-grid">
+      <div class="pathway-card">
+        <div class="pathway-head"><span class="num">01</span><h4>Discover™</h4><span>Ideal for studios seeking clarity</span></div>
+        <div class="pathway-body">
+          <ul><li>Executive Discovery Session</li><li>Leadership Assessment</li><li>Programming &amp; Curriculum Review</li><li>Parent Experience Review</li><li>Written Executive Summary</li></ul>
+          <div class="pathway-deliverable">Deliverable: AREA Studio Readiness Report™</div>
+        </div>
+        <a class="pathway-cta" href="discovery-profile.html">Request Info</a>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-head orchid-head"><span class="num">02</span><h4>Design™</h4><span>Ideal for studios ready to build intentionally</span></div>
+        <div class="pathway-body">
+          <ul><li>Everything in Discover, plus:</li><li>12-Month Strategic Blueprint</li><li>Studio Growth Roadmap</li><li>Enrollment &amp; Faculty Strategy</li><li>Operational Priorities</li></ul>
+          <div class="pathway-deliverable">Deliverable: AREA Strategic Blueprint™</div>
+        </div>
+        <a class="pathway-cta" href="discovery-profile.html">Request Info</a>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-head"><span class="num">03</span><h4>Develop™</h4><span>Ideal for studios ready to implement</span></div>
+        <div class="pathway-body">
+          <ul><li>Ongoing implementation partnership</li><li>Executive Coaching</li><li>Programming Refinement</li><li>Faculty Development</li><li>Accountability &amp; Results</li></ul>
+          <div class="pathway-deliverable">Deliverable: Measurable Transformation</div>
+        </div>
+        <a class="pathway-cta" href="discovery-profile.html">Request Info</a>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-head orchid-head"><span class="num">04</span><h4>Distinguish™</h4><span>Ideal for studios pursuing certification</span></div>
+        <div class="pathway-body">
+          <ul><li>Everything in Develop, plus:</li><li>Certification Review</li><li>Annual Review &amp; Reassessment</li><li>Preferred Partner Recognition</li></ul>
+          <div class="pathway-deliverable">Deliverable: Certified AREA Studio of Excellence™</div>
+        </div>
+        <a class="pathway-cta" href="discovery-profile.html">Request Info</a>
+      </div>
+    </div>
+
+    <div style="margin-top:4.5rem;">
+      <div class="section-head">
+        <span class="eyebrow on-light">Recognition That Reflects. Excellence That Lasts.</span>
+        <h2>Levels of Recognition</h2>
+        <p>Certification isn't just a milestone — it's a mark of your dedication, your systems, and the impact you create. We believe every milestone matters.</p>
+      </div>
+      <div class="cert-row">
+        <div class="cert-level"><div class="badge">01</div><h4>Foundation</h4><p>Showing up, being coachable, and taking the first step toward growth and excellence.</p></div>
+        <div class="cert-level"><div class="badge">02</div><h4>Commitment</h4><p>Reliable participation and a positive impact that strengthen our studio community.</p></div>
+        <div class="cert-level"><div class="badge">03</div><h4>Achievement</h4><p>Meaningful accomplishments that demonstrate growth, hard work, and commitment.</p></div>
+        <div class="cert-level"><div class="badge">04</div><h4>Excellence</h4><p>Consistent, high-level achievement and dedication that elevate the studio and community.</p></div>
+        <div class="cert-level"><div class="badge">05</div><h4>Distinction</h4><p>Outstanding leadership and contributions that set the standard for others.</p></div>
+        <div class="cert-level"><div class="badge">06</div><h4>Legacy</h4><p>Extraordinary impact that inspires generations and leaves a lasting legacy.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS / DIFFERENCE -->
+<section class="section-pad dark-section" style="position:relative; overflow:hidden;">
+  <div class="container" style="position:relative; z-index:2;">
+    <div class="section-head" style="max-width:100%; text-align:center; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow">What Sets AREA Apart</span>
+      <h2>Real Results. Real Studios. Real Legacy.</h2>
+      <p class="stone-text" style="max-width:560px; margin-left:auto; margin-right:auto;">This is more than consulting. This is a partnership that performs — measured not in slide decks, but in studios transformed.</p>
+    </div>
+    <div class="stats-row" style="margin-top:3.5rem;">
+      <div class="stat"><b>12+</b><span>Studios Served to Date</span></div>
+      <div class="stat"><b>95%</b><span>Client Satisfaction Rate</span></div>
+      <div class="stat"><b>3–8x</b><span>Average Return on Investment</span></div>
+      <div class="stat"><b class="stat-text">Tens of Thousands</b><span>Of Dancers' Lives Transformed</span></div>
+    </div>
+    <div style="text-align:center; margin-top:3.5rem;">
+      <a href="discovery-profile.html" class="btn btn-gold">See What's Possible for Your Studio</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow on-light">In Their Words</span>
+      <h2>Studios We've Walked Alongside</h2>
+      <p>Real feedback from the owners and partners who've experienced the AREA difference firsthand.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <span class="quote-mark">"</span>
+        <p>AREA didn't just give us a plan. They helped us see what was possible — and stay with us every step of the way.</p>
+        <span class="attribution">Studio Owner &amp; AREA Partner</span>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote-mark">"</span>
+        <p>Working with AREA feels like having a partner who truly cares about our success as much as we do.</p>
+        <span class="attribution">Studio Owner &amp; AREA Partner</span>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote-mark">"</span>
+        <p>AREA didn't just help us grow — they helped us evolve. The transformation was real, and the impact is lasting.</p>
+        <span class="attribution">Studio Owner &amp; AREA Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="compass-break" style="background:var(--navy);"><span class="star"></span></div>
+
+<!-- FINAL CTA -->
+<section class="section-pad dark-section" id="contact" style="padding-bottom:0;">
+  <div class="container">
+    <img src="images/slides/slide26.jpg" alt="This isn't just a partnership. It's your next level. Brandy Stephens and Jai McClendon Carpenter" style="width:100%; border-radius:4px;">
+  </div>
+</section>
+
+<section class="section-pad dark-section" style="text-align:center;">
+  <div class="hero-actions" style="justify-content:center;">
+    <a href="discovery-profile.html" class="btn btn-gold">Start Your Discovery Profile</a>
+    <a href="competition-discovery.html" class="btn btn-outline-light">Competition Operations Portal</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">AREA <small>STUDIO EXCELLENCE™</small></div>
+      <p style="margin-top:1rem; max-width:260px; color:rgba(247,244,238,0.5); font-size:0.82rem;">Guiding Studios. Developing Dancers. Building Legacies.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Discovery</h5>
+      <a href="discovery-profile.html">Studio Excellence Discovery Profile™</a>
+      <a href="competition-discovery.html">Competition Operations Discovery Portal™</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="#prep">The PREP™ Framework</a>
+      <a href="#standards">The Eight Standards</a>
+      <a href="#pathways">Partnership Pathways</a>
+    </div>
+    <div class="footer-col">
+      <h5>Visit</h5>
+      <p>2870 Peachtree Rd. #995<br>Atlanta, GA 30305</p>
+      <a href="mailto:jmj@myAREAatlanta.com">jmj@myAREAatlanta.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AREA Studio Excellence™. Confidential Executive Presentation.</span>
+    <span>Dance Studio Experts for Over 16 Years</span>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
